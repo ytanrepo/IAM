@@ -1,0 +1,134 @@
+﻿*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0;}
+
+body {
+  font-family: sans-serif;
+  padding: 5%;
+}
+
+p:first-child {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+.callouts {
+  list-style-type: none;
+}
+
+li + li {
+  margin-left: 3.3333%;
+}
+
+/* BASE STYLES FOR EACH */
+.callouts li {
+  display: inline-block;
+  /* Real styles */
+  position: relative;
+	width: 22%;
+	height: 100px;
+  padding: 15px;
+	background-color: #fff;
+  border: 1px solid #c1c1c1;
+	border-radius: 4px;
+	box-shadow: 0 0 10px #c1c1c1;
+}
+
+/* TOP */
+.callouts--top:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 23px;
+	top: -42px;
+  border: 10px solid transparent;
+  border-bottom: 32px solid rgb(193,193,193); /* IE8 Fallback */
+  border-bottom: 32px solid rgba(193,193,193,0.5);
+  z-index: 2;
+}
+.callouts--top:after {
+  content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 25px;
+	top: -32px;
+  border: 8px solid transparent;
+  border-bottom: 25px solid #fff;
+  z-index: 3;
+}
+
+/* BOTTOM */
+.callouts--bottom:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 23px;
+	bottom: -42px;
+  border: 10px solid transparent;
+  border-top: 32px solid rgb(193,193,193); /* IE8 Fallback */
+  border-top: 32px solid rgba(193,193,193,0.5);
+  z-index: 2;
+}
+.callouts--bottom:after {
+  content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 25px;
+	bottom: -31px;
+  border: 8px solid transparent;
+  border-top: 24px solid #fff;
+  z-index: 3;
+}
+
+/* LEFT */
+.callouts--left:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: -42px;
+	top: 17px;
+  border: 10px solid transparent;
+  border-right: 32px solid rgb(193,193,193); /* IE8 Fallback */
+  border-right: 32px solid rgba(193,193,193,0.5);
+  z-index: 2;
+}
+.callouts--left:after {
+  content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: -31px;
+	top: 20px;
+  border: 8px solid transparent;
+  border-right: 24px solid #fff;
+  z-index: 3;
+}
+
+/* RIGHT */
+.callouts--right:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: -42px;
+	top: 17px;
+  border: 10px solid transparent;
+  border-left: 32px solid rgb(193,193,193); /* IE8 Fallback */
+  border-left: 32px solid rgba(193,193,193,0.5);
+  z-index: 2;
+}
+.callouts--right:after {
+  content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: -31px;
+	top: 20px;
+  border: 8px solid transparent;
+  border-left: 24px solid #fff;
+  z-index: 3;
+}
