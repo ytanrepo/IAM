@@ -1,0 +1,97 @@
+﻿<html>
+<head>
+    <script src="scripts/mqttws31.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+  // Create a client instance
+  client = new Paho.MQTT.Client("m12.cloudmqtt.com", 34616,"web_" + parseInt(Math.random() * 100, 10));
+  //Example client = new Paho.MQTT.Client("m11.cloudmqtt.com", 32903, "web_" + parseInt(Math.random() * 100, 10));
+
+  // set callback handlers
+  client.onConnectionLost = onConnectionLost;
+  client.onMessageArrived = onMessageArrived;
+  var options = {
+    useSSL: true,
+    userName: "mike",
+    password: "password",
+    onSuccess:onConnect,
+    onFailure:doFail
+  }
+
+  // connect the client
+  client.connect(options);
+
+  // called when the client connects
+  function onConnect() {
+    // Once a connection has been made, make a subscription and send a message.
+    console.log("onConnect");
+    client.subscribe("control/123456/request");
+  }
+
+  function doFail(e){
+    alert("failure: " + e);
+    console.log(e);
+  }
+
+  // called when the client loses its connection
+  function onConnectionLost(responseObject) {
+    if (responseObject.errorCode !== 0) {
+      alert("connection lost: " + responseObject.errorMessage);
+      console.log("onConnectionLost:"+responseObject.errorMessage);
+    }
+  }
+
+  // called when a message arrives
+  function onMessageArrived(message) {
+    console.log("onMessageArrived:"+message.payloadString);
+  }
+
+  //send a command to the remote client
+  function sendCommand(commandString) {
+    message = new Paho.MQTT.Message(commandString);
+    message.destinationName = "control/123456/request";
+    client.send(message);
+  }
+
+
+
+
+    </script>
+</head>
+<body>
+    This is a test page
+    <script>var run='{"$types":{"ExecuteRequest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null":"1"},"$type":"1","objectName":"Wizard-Blue","objectType":"WizardController","functionName":"Run","functionParameters":[],"deviceId":"123456"}'</script>
+    <script>var walk='{"$types":{"ExecuteRequest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null":"1"},"$type":"1","objectName":"Wizard-Blue","objectType":"WizardController","functionName":"Walk","functionParameters":[],"deviceId":"123456"}'</script>
+    <script>var defend='{"$types":{"ExecuteRequest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null":"1"},"$type":"1","objectName":"Wizard-Blue","objectType":"WizardController","functionName":"Defend","functionParameters":[],"deviceId":"123456"}'</script>
+    <script>var melee='{"$types":{"ExecuteRequest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null":"1"},"$type":"1","objectName":"Wizard-Blue","objectType":"WizardController","functionName":"Melee","functionParameters":[],"deviceId":"123456"}'</script>
+    <script>var hit='{"$types":{"ExecuteRequest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null":"1"},"$type":"1","objectName":"Wizard-Blue","objectType":"WizardController","functionName":"Hit","functionParameters":[],"deviceId":"123456"}'</script>
+    <script>var jump='{"$types":{"ExecuteRequest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null":"1"},"$type":"1","objectName":"Wizard-Blue","objectType":"WizardController","functionName":"Jump","functionParameters":[],"deviceId":"123456"}'</script>
+    <script>var magic1='{"$types":{"ExecuteRequest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null":"1"},"$type":"1","objectName":"Wizard-Blue","objectType":"WizardController","functionName":"CastMagic1","functionParameters":[],"deviceId":"123456"}'</script>
+    <script>var magic2='{"$types":{"ExecuteRequest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null":"1"},"$type":"1","objectName":"Wizard-Blue","objectType":"WizardController","functionName":"CastMagic2","functionParameters":[],"deviceId":"123456"}'</script>
+    <script>var magic3='{"$types":{"ExecuteRequest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null":"1"},"$type":"1","objectName":"Wizard-Blue","objectType":"WizardController","functionName":"CastMagic3","functionParameters":[],"deviceId":"123456"}'</script>
+    <script>var die='{"$types":{"ExecuteRequest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null":"1"},"$type":"1","objectName":"Wizard-Blue","objectType":"WizardController","functionName":"Die","functionParameters":[],"deviceId":"123456"}'</script>
+
+
+    <a href onClick="sendCommand(run); return false;">Run</a>
+    <a href onClick="sendCommand(walk); return false;">Walk</a>
+    <a href onClick="sendCommand(defend); return false;">Defend</a>
+    <a href onClick="sendCommand(melee); return false;">Hit</a>
+    <a href onClick="sendCommand(magic1); return false;">Cast Spell 1</a>
+    <a href onClick="sendCommand(magic2); return false;">Cast Spell 2</a>
+    <a href onClick="sendCommand(magic3); return false;">Cast Spell 3</a>
+    <a href onClick="sendCommand(die); return false;">Die</a>
+
+
+    <script type="text/javascript">
+ function textUpdate() {
+
+    var textValue = document.getElementsByName('textBox')[0].value;
+    var textString = '{"$types":{"ExecuteRequest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null":"1"},"$type":"1","objectName":"HTML","objectType":"HTMLGuiManager","functionName":"UpdateText","functionParameters":["' + textValue + '"],"deviceId":"123456"}';
+    console.log(textString);
+    sendCommand(textString);
+ }
+    </script>
+    <input type="text" name="textBox" onKeyUp="return textUpdate()" />
+
+</body>
+</html>
