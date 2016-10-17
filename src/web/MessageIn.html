@@ -8,26 +8,31 @@
 </head>
 <body>
     <script src="scripts/home.js" type="text/javascript"></script>
+    <script src="scripts/mqttClient.js" type="text/javascript"></script>
     <script src="scripts/mqttws31.js" type="text/javascript"></script>
     <script type="text/javascript">
-        InitializedMqtt();
-
+        initializedMqtt();
     </script>
-
 
     <div>
         <!--<input id="displayText" style="font-size:large" /> <br />-->
         <input type="text" name="textBox" onKeyUp="return textUpdate()" />
+        <input id="uid" type="hidden" />
     </div>
 
-    <a href="#" onClick="InitializeWizardController('Run')">Run</a>
-    <a href="#" onClick="InitializeWizardController('Walk')">Walk</a>
-    <a href="#" onClick="InitializeWizardController('Defend')">Defend</a>
-    <a href="#" onClick="InitializeWizardController('Melee')">Hit</a>
-    <a href="#" onClick="InitializeWizardController('Magic1')">Cast Spell 1</a>
-    <a href="#" onClick="InitializeWizardController('Magic2')">Cast Spell 2</a>
-    <a href="#" onClick="InitializeWizardController('Magic3')">Cast Spell 3</a>
-    <a href="#" onClick="InitializeWizardController('Die')">Die</a>
+    <a href="#" onClick="initializeWizardController('Run')">Run</a>
+    <a href="#" onClick="initializeWizardController('Walk')">Walk</a>
+    <a href="#" onClick="initializeWizardController('Defend')">Defend</a>
+    <a href="#" onClick="initializeWizardController('Melee')">Hit</a>
+    <a href="#" onClick="initializeWizardController('Magic1')">Cast Spell 1</a>
+    <a href="#" onClick="initializeWizardController('Magic2')">Cast Spell 2</a>
+    <a href="#" onClick="initializeWizardController('Magic3')">Cast Spell 3</a>
+    <a href="#" onClick="initializeWizardController('Die')">Die</a>
+
+
+    <script type="text/javascript">
+        initUid();
+    </script>
 
 </body>
 
