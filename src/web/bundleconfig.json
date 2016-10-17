@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "scripts/app.min.js",
+    "inputFiles": [
+      "scripts/app.js"
+    ]
+  },
+  {
+    "outputFileName": "scripts/mqttws31.min.js",
+    "inputFiles": [
+      "scripts/mqttws31.js"
+    ]
+  }
+]
