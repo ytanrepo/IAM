@@ -10,5 +10,11 @@
     "inputFiles": [
       "scripts/mqttws31.js"
     ]
+  },
+  {
+    "outputFileName": "scripts/mqttClient.min.js",
+    "inputFiles": [
+      "scripts/mqttClient.js"
+    ]
   }
 ]

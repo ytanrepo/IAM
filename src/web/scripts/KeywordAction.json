@@ -1,0 +1,28 @@
+﻿{
+  "Wizard": [
+    {
+      "FunctionName": "Run",
+      "KeyWord": "run, playing, sports, activities, jump, exercise"
+    },
+    {
+      "FunctionName": "Hit",
+      "KeyWord": "baseball, football, golf, basketball, tennis, golf"
+    },
+    {
+      "FunctionName": "Walk",
+      "KeyWord": "hiking, hike, shopping, mall, going"
+    },
+    {
+      "FunctionName": "Run",
+      "KeyWord": "run, playing, sports, activities, jump, exercise"
+    },
+    {
+      "FunctionName": "Die",
+      "KeyWord": "injure, kill, gun, aim, hunting"
+    },
+    {
+      "FunctionName": "Melee Attack",
+      "KeyWord": "donald, trump, politic, lie, false, accuse"
+    }
+  ] 
+}
