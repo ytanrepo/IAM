@@ -16,5 +16,17 @@
     "inputFiles": [
       "scripts/mqttClient.js"
     ]
+  },
+  {
+    "outputFileName": "css/Site.min.css",
+    "inputFiles": [
+      "css/Site.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/Site.min.css",
+    "inputFiles": [
+      "styles/Site.css"
+    ]
   }
 ]
