@@ -1,14 +1,10 @@
-﻿// Build namespace if it does not already exist.
-var comcast = comcast || {};
+﻿
 
-(function (namespace, document) {
-    /**
-     * Create IAM module.
-     */
-    namespace.iam = (function () {
-        "use strict";
-
-
-    });
-
-})(comcast.iam, document)
+comcast.iam.bind(document.getElementById("chat-form"));
+document.forms['chat-form'].onsubmit = function () {
+    comcast.iam.sendModel();
+    document.getElementById("msg-text").focus();
+    return false;
+}
+comcast.iam.addClient(comcast.mqttClient);
+document.getElementById("msg-text").focus();

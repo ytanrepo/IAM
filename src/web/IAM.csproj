@@ -66,6 +66,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="scripts\iam-module.js" />
+    <Content Include="scripts\mqttClient-module.js" />
+    <Content Include="scripts\Tests\iam-spec.js" />
     <Content Include="styles\bootstrap-theme.css" />
     <Content Include="styles\bootstrap-theme.min.css" />
     <Content Include="styles\bootstrap.css" />
@@ -84,7 +87,6 @@
       <DependentUpon>app.js</DependentUpon>
     </Content>
     <Content Include="scripts\bootstrap.js" />
-    <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\html5shiv.min.js" />
     <Content Include="scripts\KeywordAction.json" />
     <Content Include="styles\bootstrap-theme.css.map" />
@@ -109,20 +111,15 @@
     <Content Include="scripts\Home.js" />
     <Content Include="scripts\knockout-3.4.0.js" />
     <Content Include="scripts\mqttClient.js" />
-    <Content Include="scripts\mqttClient.min.js">
-      <DependentUpon>mqttClient.js</DependentUpon>
-    </Content>
     <Content Include="scripts\mqttws31.js" />
     <None Include="scripts\_references.js" />
-    <Content Include="scripts\mqttws31.min.js">
-      <DependentUpon>mqttws31.js</DependentUpon>
-    </Content>
     <Content Include="scripts\respond.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

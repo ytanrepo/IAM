@@ -2,30 +2,18 @@
   {
     "outputFileName": "scripts/app.min.js",
     "inputFiles": [
+      "scripts/mqttws31.js",
+      "scripts/knockout-3.4.0.js",
+      "scripts/mqttClient-module.js",
+      "scripts/iam-module.js",
       "scripts/app.js"
-    ]
-  },
-  {
-    "outputFileName": "scripts/mqttws31.min.js",
-    "inputFiles": [
-      "scripts/mqttws31.js"
-    ]
-  },
-  {
-    "outputFileName": "scripts/mqttClient.min.js",
-    "inputFiles": [
-      "scripts/mqttClient.js"
-    ]
-  },
-  {
-    "outputFileName": "css/Site.min.css",
-    "inputFiles": [
-      "css/Site.css"
     ]
   },
   {
     "outputFileName": "styles/Site.min.css",
     "inputFiles": [
+      "styles/bootstrap.css",
+      "styles/bootstrap-theme.css",
       "styles/Site.css"
     ]
   }
