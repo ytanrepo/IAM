@@ -7,7 +7,7 @@ var comcast = comcast || {};
  */
 comcast.iam = comcast.iam || (function (ko) {
     "use strict";
-    var message = { id: ko.observable(""), msgText: ko.observable("") };
+    var message = { id: ko.observable(""), msgText: ko.observable(""), actions: ['Walk', 'Defend', 'Melee', 'Magic1', 'Magic2', 'Magic3', 'Die'] };
     var messagingClients = [{ sendMessage: function (command) { console.log(command.toJsonString()); } }];
 
     /**
@@ -89,6 +89,17 @@ comcast.iam = comcast.iam || (function (ko) {
             messagingClients[i].sendMessage(command);
         }
     }
+
+    /**
+ * Sends a message when the model is changed.
+ * @returns {void} 
+ */
+    function sendAction(actionName) {
+        var command = createCommand("ExecuteRequest", "Wizard-Blue", "WizardController", actionName, [], "123456");
+        for (var i = 0; i < messagingClients.length; i++) {
+            messagingClients[i].sendMessage(command);
+        }
+    }
     /**
      * Adds a messaging client.
      * @param {Object} client 
@@ -104,6 +115,6 @@ comcast.iam = comcast.iam || (function (ko) {
             onModelChanged();
         }
     });
-    return { createCommand: createCommand, model: message, bind: bindTo, sendModel: sendModel, addClient: addClient };
+    return { createCommand: createCommand, sendAction: sendAction, model: message, bind: bindTo, sendModel: sendModel, addClient: addClient };
 
 })(ko);

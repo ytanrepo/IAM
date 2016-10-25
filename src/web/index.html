@@ -51,6 +51,14 @@
                 <input class="form-control input-lg btn btn-primary" id="submitButton" type="submit" value="Send"/>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <span data-bind="foreach: actions">
+                    <input class="btn btn-info" type="button" data-bind="value: $data, click: function(){comcast.iam.sendAction($data);}" />
+                </span>
+               
+            </div>
+        </div>
         <input id="msg-id" name="msg-id" type="hidden"/>
     </form>
 </div>
