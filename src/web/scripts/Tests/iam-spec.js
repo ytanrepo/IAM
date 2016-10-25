@@ -15,4 +15,17 @@ describe("iam", function () {
         console.log(model.id());
         expect(model.id()).not.toBe(null);
     });
+
+    it("should send actions", function () {
+
+        var mock = {
+             cmd: null, 
+             sendMessage: function (msg) {
+                this.cmd = msg;
+            }
+        };
+        comcast.iam.addClient(mock);
+        comcast.iam.sendAction("test");
+        expect(mock.cmd).not.toBe(null);
+    });
 });
