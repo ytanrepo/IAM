@@ -7,7 +7,7 @@ var comcast = comcast || {};
  */
 comcast.iam = comcast.iam || (function (ko) {
     "use strict";
-    var message = { id: ko.observable(""), msgText: ko.observable(""), actions: ['Walk', 'Defend', 'Melee', 'Magic1', 'Magic2', 'Magic3', 'Die'] };
+    var message = { id: ko.observable(""), msgText: ko.observable(""), actions: ['Bow', 'Stretch', 'Pitch', 'Swing', 'Dance', 'Football', 'Hunt', 'Idle'] };
     var messagingClients = [{ sendMessage: function (command) { console.log(command.toJsonString()); } }];
 
     /**
@@ -84,7 +84,7 @@ comcast.iam = comcast.iam || (function (ko) {
      * @returns {void} 
      */
     function onModelChanged() {
-        var command = createCommand("ExecuteRequest", "HTML", "HTMLGuiManager", "UpdateText", [message.id(), message.msgText()], "123456");
+        var command = createCommand("ExecuteRequest", "HTML", "EthanHTMLGuiManager", "UpdateText", [message.id(), message.msgText()], "123456");
         for (var i = 0; i < messagingClients.length; i++) {
             messagingClients[i].sendMessage(command);
         }
@@ -95,7 +95,7 @@ comcast.iam = comcast.iam || (function (ko) {
  * @returns {void} 
  */
     function sendAction(actionName) {
-        var command = createCommand("ExecuteRequest", "Wizard-Blue", "WizardController", actionName, [], "123456");
+        var command = createCommand("ExecuteRequest", "Assets.Ethan.char_ethan", "EthanController", actionName, [], "123456");
         for (var i = 0; i < messagingClients.length; i++) {
             messagingClients[i].sendMessage(command);
         }
