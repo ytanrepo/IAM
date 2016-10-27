@@ -10,11 +10,11 @@
     ]
   },
   {
-    "outputFileName": "styles/Site.min.css",
+    "outputFileName": "styles/site.min.css",
     "inputFiles": [
       "styles/bootstrap.css",
       "styles/bootstrap-theme.css",
-      "styles/Site.css"
+      "styles/site.css"
     ]
   }
 ]

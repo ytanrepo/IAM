@@ -74,9 +74,9 @@
     <Content Include="styles\bootstrap.css" />
     <Content Include="styles\bootstrap.min.css" />
     <Content Include="styles\images\xfinity-white.png" />
-    <Content Include="styles\Site.css" />
+    <Content Include="styles\site.css" />
     <Content Include="styles\Site.min.css">
-      <DependentUpon>Site.css</DependentUpon>
+      <DependentUpon>site.css</DependentUpon>
     </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
