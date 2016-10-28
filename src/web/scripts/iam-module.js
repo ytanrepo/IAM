@@ -85,7 +85,7 @@ comcast.iam = comcast.iam || (function (ko) {
      */
     function onModelChanged() {
         var text = message.userName() + ": " + message.msgText();
-        var command = createCommand("ExecuteRequest", "HTML", "EthanHTMLGuiManager", "UpdateText", [message.id(), message.msgText()], "123456");
+        var command = createCommand("ExecuteRequest", "HTML", "EthanHTMLGuiManager", "UpdateText", [message.id(), text], "123456");
         for (var i = 0; i < messagingClients.length; i++) {
             messagingClients[i].sendMessage(command);
         }

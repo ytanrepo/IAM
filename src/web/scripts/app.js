@@ -7,10 +7,12 @@ document.forms["chat-form"].onsubmit = function () {
     return false;
 }
 comcast.iam.addClient(comcast.mqttClient);
-document.getElementById("msg-text").focus();
+
 
 $("#login").click(function() {
     $("#login-modal").modal("hide");
+    document.getElementById("msg-text").focus();
 });
 
 $("#login-modal").modal({ backdrop: "static" });
+document.getElementById("userName").focus();
