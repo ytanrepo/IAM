@@ -33,7 +33,7 @@
     </div>
 </nav>
 <!-- /Navigation -->
-<div class="container">
+<div id="main-container" class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
             <h1>IAM Web Access</h1>
@@ -43,7 +43,7 @@
         <div class="row">
             <div class="form-group col-lg-12">
                 <label for="msg-text">Message:</label>
-                <input class="form-control input-lg" name="msg-text" id="msg-text" type="text"  data-bind="textInput: msgText" autocomplete="off" />
+                <input class="form-control input-lg" name="msg-text" id="msg-text" type="text" data-bind="textInput: msgText" autocomplete="off"/>
             </div>
         </div>
         <div class="row">
@@ -61,9 +61,30 @@
         </div>
         <input id="msg-id" name="msg-id" type="hidden"/>
     </form>
+
+    <div id="login-modal"  class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Login to Your Account</h4>
+                    </div>
+                    <div class="modal-body">
+                        <label for="userName">User Name:</label>
+                        <input id="userName" type="text" class="form-control input-lg" name="userName" placeholder="Username" data-bind="value: userName">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Login</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+  
 </div>
 <script src="/scripts/app.min.js" type="text/javascript"></script>
 <script>
+
 
 </script>
 </body>

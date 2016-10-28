@@ -4,6 +4,7 @@
 /// <reference path="Home.js" />
 /// <reference path="html5shiv.min.js" />
 /// <reference path="iam-module.js" />
+/// <reference path="jquery-3.1.1.js" />
 /// <reference path="knockout-3.4.0.js" />
 /// <reference path="mqttClient.js" />
 /// <reference path="mqttclient-module.js" />

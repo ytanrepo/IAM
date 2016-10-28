@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="scripts\iam-module.js" />
+    <Content Include="scripts\jquery-3.1.1.js" />
     <Content Include="scripts\mqttClient-module.js" />
     <Content Include="scripts\Tests\iam-spec.js" />
     <Content Include="styles\bootstrap-theme.css" />
